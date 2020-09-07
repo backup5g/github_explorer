@@ -58,15 +58,15 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <img src={logo} alt="github_explorer" />
-      <Title>Explore repositórios no Github.</Title>
+      <Title>Explore repositories on Github.</Title>
 
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>
         <input
           value={newRepo}
           onChange={e => setNewRepo(e.target.value)} 
-          placeholder="Digite o nome do repositório" 
+          placeholder="Name of the repository" 
         />
-        <button type="submit">Pesquisar</button>
+        <button type="submit">Search</button>
       </Form>
 
       { inputError && <Error>{inputError}</Error> }
