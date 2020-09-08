@@ -5,11 +5,14 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 
 import api from '../../services/api'
-import { Title, Form, Repositories, Error } from './styles';
+import languageColors from '../../utils/languageColors.json'
+
+import { Title, Form, Repositories, Error, LanguageColor } from './styles';
 
 interface Repository {
   full_name: string
   description: string
+  language: keyof typeof languageColors
   owner: {
     login: string
     avatar_url: string
@@ -82,6 +85,17 @@ const Dashboard: React.FC = () => {
             <div>
               <strong>{repo.full_name}</strong>
               <p>{repo.description}</p>
+              <span>
+                <LanguageColor 
+                  languageColor={
+                    languageColors[repo.language 
+                      ? repo.language 
+                      : 'notFound'
+                    ].color
+                  }
+                />
+                {repo.language ? repo.language : 'No Language'}
+              </span>
             </div>
 
             <FiChevronRight size={24} />

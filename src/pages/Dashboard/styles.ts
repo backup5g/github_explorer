@@ -137,6 +137,15 @@ export const Repositories = styled.div`
 
         margin-top: 0.8rem;
       }
+
+      > span {
+        display: flex;
+        align-items: center;
+
+        color: var(--color-icons);
+
+        margin-top: 2.4rem;
+      }
     }
 
     > svg {
@@ -147,9 +156,11 @@ export const Repositories = styled.div`
 ` 
 
 export const LanguageColor = styled.div<LanguageColorProps>`
-  height: 0.8rem;
-  width: 0.8rem;
+  height: 1rem;
+  width: 1rem;
 
   border-radius: 50%;
-  background: ${props => props.languageColor}
+  background: ${props => props.languageColor};
+
+  margin-right: 0.8rem;
 `
