@@ -10,7 +10,7 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
 
-    color: #a8a8b3;
+    color: var(--color-card-text);
     text-decoration: none;
 
     transition: color 0.2s;
@@ -20,37 +20,37 @@ export const Header = styled.header`
     }
 
     > svg {
-      margin-right: 8px;
+      margin-right: 0.8rem;
     }
   }
 `
 
 export const RepositoryInfo = styled.section`
-  margin-top: 80px;
+  margin-top: 8rem;
 
   > header {
     display: flex;
     align-items: center;
 
     > img {
-      height: 120px;
-      width: 120px;
+      height: 12rem;
+      width: 12rem;
       border-radius: 50%;
     }
 
     > div {
-      margin-left: 24px;
+      margin-left: 2.4rem;
 
       > strong {
         color: #3d3d4d;
-        font-size: 36px;
+        font-size: 3.6rem;
       }
 
       > p {
         color: #737380;
-        font-size: 18px;
+        font-size: 1.8rem;
 
-        margin-top: 8px;
+        margin-top: 0.8rem;
       }
     }
   }
@@ -58,31 +58,31 @@ export const RepositoryInfo = styled.section`
   > ul {
     display: flex;
     list-style: none;
-    margin-top: 40px;
+    margin-top: 4rem;
 
     > li {
       & + li {
-        margin-left: 80px;
+        margin-left: 8rem;
       }
 
       > strong {
         display: block;
 
-        color: #3d3d4d;
-        font-size: 36px;
+        color: var(--color-card-title);
+        font-size: 3.6rem;
       }
 
       > span {
         display: block;
         color: #6c6c80;
-        margin-top: 4px;
+        margin-top: 0.4rem;
       }
     }
   }
 `
 
 export const Issues = styled.div`
-  margin-top: 80px;
+  margin-top: 8rem;
 
   a {
     width: 100%;
@@ -91,44 +91,48 @@ export const Issues = styled.div`
     display: flex;
     align-items: center;
 
-    border-radius: 5px;
-    background: #fff;
+    border-radius: 0.5rem;
+    background: var(--color-card-background);
 
     text-decoration: none;
 
-    padding: 24px;
+    padding: 2.4rem;
 
     transition: transform 0.2s;
 
     & + a {
-      margin-top: 16px;
+      margin-top: 1.6rem;
     }
 
     &:hover {
-      transform: translateX(16px)
+      transform: translateX(1.6rem)
     }
 
     > div {
       flex: 1%;
-      margin-left: 24px;
+      margin-left: 2.4rem;
 
       > strong {
-        color: #3d3d4d;
-        font-size: 20px;
+        color: var(--color-card-title);
+        font-size: 2rem;
       }
 
       > p {
         max-width: 75%;
 
-        color: #a8a8b3;
-        font-size: 18px;
+        color: var(--color-card-text);
+        font-size: 1.8rem;
 
-        margin-top: 8px;
+        margin-top: 0.8rem;
+      }
+
+      @media (max-width: 700px) {
+        max-width: 320px;
       }
     }
 
     > svg {
-      color: #cbcbd6;
+      color: var(--color-icons);
       margin-left: auto;
     }
   }

@@ -5,50 +5,52 @@ interface FormProps {
   hasError: boolean
 }
 
+interface LanguageColorProps {
+  languageColor: string | null;
+}
+
 export const Title = styled.h1`
   max-width: 450px;
 
-  color: #3a3a3a;
-  font-size: 48px;
-  line-height: 56px;
+  color: var(--color-title);
+  font-size: 4.8rem;
+  line-height: 5.6rem;
 
-  margin-top: 80px;
+  margin-top: 8rem;
 `;
 
 export const Form = styled.form<FormProps>`
   max-width: 715px;
   display: flex;
-  margin-top: 40px;
+  margin-top: 4rem;
 
   > input {
-    height: 70px;
+    width: 100%;
+    height: 7rem;
 
-    flex: 1;
-
-    border: 2px solid;
+    border: 0.2rem solid;
     border-right: 0;
     border-color: ${({ hasError }) => hasError ? '#c53030' : '#fff'};
-    border-radius: 5px 0 0 5px;
+    border-radius: 0.5rem 0 0 0.5rem;
 
+    color: var(--color-title);
 
-    color: #3a3a3a;
-
-    padding: 0 24px;
+    padding: 0 2.4rem;
 
     &::placeholder {
-      color: #a8a8b3;
+      color: var(--color-card-text);
     }
   }
 
   > button {
-    height: 70px;
-    width: 210px;
+    height: 7rem;
+    width: 21rem;
 
     border: 0;
-    border-radius: 0 5px 5px 0;
-    background: #04d361;
+    border-radius: 0 0.5rem 0.5rem 0;
+    background: var(--color-cta);
 
-    color: #fff;
+    color: var(--color-card-background);
     font-weight: bold;
 
     transition: background-color 0.2s;
@@ -57,17 +59,35 @@ export const Form = styled.form<FormProps>`
       background: ${shade(0.2, '#04d361')}
     }
   }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+
+    > input {
+      height: 6rem;
+      border-radius: 0.5rem;
+    }
+
+    > button {
+      height: 6rem;
+      width: 100%;
+
+      border-radius: 0.5rem;
+
+      margin-top: 1.6rem;
+    }
+  }
 `
 
 export const Error = styled.span`
   display: block;
-  color: #c53030;
-  margin-top: 8px;
+  color: var(--color-error);
+  margin-top: 0.8rem;
 `
 
 export const Repositories = styled.div`
-  max-width: 700px;
-  margin-top: 80px;
+  max-width: 715px;
+  margin-top: 8rem;
 
   a {
     width: 100%;
@@ -76,52 +96,60 @@ export const Repositories = styled.div`
     display: flex;
     align-items: center;
 
-    border-radius: 5px;
+    border-radius: 0.5rem;
     background: #fff;
 
     text-decoration: none;
 
-    padding: 24px;
+    padding: 2.4rem;
 
     transition: transform 0.2s;
 
     & + a {
-      margin-top: 16px;
+      margin-top: 1.6rem;
     }
 
     &:hover {
-      transform: translateX(16px)
+      transform: translateX(1.6rem)
     }
 
     > img {
-      height: 64px;
-      width: 64px;
+      height: 6.4rem;
+      width: 6.4rem;
 
       border-radius: 50%;
     }
 
     > div {
       flex: 1%;
-      margin-left: 24px;
+      margin-left: 2.4rem;
 
       > strong {
-        color: #3d3d4d;
-        font-size: 20px;
+        color: var(--color-card-title);
+        font-size: 2rem;
       }
 
       > p {
         max-width: 75%;
 
-        color: #a8a8b3;
-        font-size: 18px;
+        color: var(--color-card-text);
+        font-size: 1.8rem;
 
-        margin-top: 8px;
+        margin-top: 0.8rem;
       }
     }
 
     > svg {
-      color: #cbcbd6;
+      color: var(--color-icons);
       margin-left: auto;
     }
   }
 ` 
+
+export const LanguageColor = styled.div<LanguageColorProps>`
+  height: 0.8rem;
+  width: 0.8rem;
+
+  border-radius: 50%;
+  background: ${props => props.languageColor}
+`
