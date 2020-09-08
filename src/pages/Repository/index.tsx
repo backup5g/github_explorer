@@ -29,6 +29,7 @@ interface Issue {
   html_url: string
   user: {
     login: string
+    avatar_url: string
   }
 }
 
@@ -95,6 +96,11 @@ const Repository: React.FC = () => {
       <Issues>
         {issues.map(issue => (
           <a key={issue.id} href={issue.html_url}>
+            <img 
+              src={issue.user.avatar_url}
+              alt={issue.user.login} 
+            />
+
             <div>
               <strong>{issue.title}</strong>
               <p>{issue.user.login}</p>

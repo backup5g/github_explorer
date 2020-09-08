@@ -52,6 +52,10 @@ export const RepositoryInfo = styled.section`
 
         margin-top: 0.8rem;
       }
+
+      @media (max-width: 700px) {
+        max-width: 290px;
+      }
     }
   }
 
@@ -106,6 +110,13 @@ export const Issues = styled.div`
 
     &:hover {
       transform: translateX(1.6rem)
+    }
+
+    > img {
+      height: 6.4rem;
+      width: 6.4rem;
+
+      border-radius: 50%;
     }
 
     > div {
